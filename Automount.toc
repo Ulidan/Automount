@@ -1,9 +1,9 @@
-## Interface: 30402
+## Interface: 40400
 ## Title: Auto |cff00ff00Mount
 ## Notes: Remounts you after gathering
 ## Author: Zilom
 ## SavedVariablesPerCharacter: AutoMountDB
-## Version: 2.0.0
+## Version: 2.0.3
 
 # main:
 automount.lua
