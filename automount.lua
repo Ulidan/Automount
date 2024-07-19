@@ -61,7 +61,7 @@ end
 local function mountList()
 	sPrint("#: Name")
 	local Ids = C_MountJournal.GetMountIDs()
-	for id in ipairs(Ids) do
+	for _,id in pairs(Ids) do
 		local name, _, _, _, isUsable = C_MountJournal.GetMountInfoByID(id)
 		local mountType = select(5,C_MountJournal.GetMountInfoExtraByID(id))
 		if isUsable then
@@ -96,7 +96,7 @@ local function remount()
 	dPrint("Trying to mount")
 	if AutoMountDB.gather and AutoMountDB.lastMount and not IsMounted()
 		and not (IsIndoors() or UnitCastingInfo("player")
-			or InCombatLockdown() or IsPlayerMoving() or IsSwimming()) then
+			or InCombatLockdown() or IsPlayerMoving()) then
 		mount(AutoMountDB.lastMount)
 	end
 end
@@ -193,20 +193,20 @@ AutoMount:registerEvents()
 ----- end of event block ------
 
 local function slashHandler(arg)
-	if arg then
+	if arg and strtrim(arg) ~= "" then
 		if string.lower(arg) == "debug" then
 			AutoMountDB.debug = not AutoMountDB.debug
 			if AutoMountDB.debug then
-				sPrint("Debug on")
+				sPrint"Debug on"
 			else
-				sPrint("Debug off")
+				sPrint"Debug off"
 			end
 		elseif string.lower(arg) == "gather" then
 			AutoMountDB.gather = not AutoMountDB.gather
 			if AutoMountDB.gather then
-				sPrint("Gather mode on")
+				sPrint"Gather mode on"
 			else
-				sPrint("Gather mode off")
+				sPrint"Gather mode off"
 			end
 		elseif string.lower(arg) == "list" then
 			mountList()
@@ -218,7 +218,7 @@ local function slashHandler(arg)
 						return
 					end
 				end
-				sPrint("Couldn't find mountable mount in list")
+				sPrint"Couldn't find mountable mount in list"
 			end
 			return
 		end

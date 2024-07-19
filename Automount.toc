@@ -3,7 +3,7 @@
 ## Notes: Remounts you after gathering
 ## Author: Zilom
 ## SavedVariablesPerCharacter: AutoMountDB
-## Version: 2.0.3
+## Version: 2.0.5
 
 # main:
 automount.lua
