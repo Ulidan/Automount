@@ -20,6 +20,7 @@ local config = {
 		[28695] = true,
 		[50300] = true,
 		[74519] = true,
+		[110413] = true,
 
 		[2575] = true, --Mining
 		[2576] = true,
@@ -28,6 +29,7 @@ local config = {
 		[29354] = true,
 		[50310] = true,
 		[74517] = true,
+		[102161] = true,
 
 		[30427] = true, --Extract Gas
 	},
